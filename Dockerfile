@@ -1,4 +1,4 @@
-FROM openjdk:11-jdk-slim
+FROM eclipse-temurin:11-jre
 EXPOSE 8077
-ADD target/devopstool.war devopstool.war
-ENTRYPOINT ["java","-jar","/devopstool.war"]
+COPY target/devopstool.war /app.war
+ENTRYPOINT ["java","-jar","/app.war"]
